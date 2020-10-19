@@ -1,2 +1,4 @@
 *.sh
 commitmessage.txt
+node_modules
+dist/*

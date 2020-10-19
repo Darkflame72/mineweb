@@ -1,19 +1,24 @@
-require("error-polyfill"); // Works around problems with non-Chromium-based browsers
+
+// Workaround for non-chromium browsers
+require("error-polyfill");
 
 import { Mineweb } from "./lib/mineweb.js"
-let hhost;
-while (hhost == "" || hhost == undefined) hhost = prompt("Host", "95.111.249.143:10000");
-const mineweb = new Mineweb(hhost.split(":")[0], hhost.split(":")[1]); // TODO: Default port
-// import { setup } from "./setup.js";
-// setup();
 
-console.log("Mineweb version dev-fixnonchrome"); // In the dev version we can put some random letters here to make sure it built properly, maybe, and do it properly in the snapshot
+console.log("Mineweb version dev-1");
 
+// Get minecraft server
+let host;
+while (host == "" || host == undefined) host = prompt("Host", "95.111.249.143:10000");
+const mineweb = new Mineweb(host.split(":")[0], host.split(":")[1]);
+
+
+// Get username
 let username;
 while (username == "" || username == undefined) username = prompt("Please choose a username");
 console.log("Starting with username: " + username);
 mineweb.start(username)
-// HACK TO MAKE AN ESC POPUP WITH SETTINGS ETC
+
+// Hack to make esc work
 document.addEventListener("pointerlockchange", function(event) {
   const canvas = document.getElementById("noa-canvas");
   if (

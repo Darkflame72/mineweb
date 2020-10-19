@@ -1,27 +1,27 @@
 {
-  "name": "html5-minecraft-client",
-  "version": "0.0.1",
+  "name": "mineweb",
+  "version": "0.1.0",
   "description": "A Minecraft client written in HTML5",
   "main": "main.js",
   "dependencies": {
-    "centra": "github:Heath123/centra#master",
+    "axios": "^0.20.0",
     "error-polyfill": "^0.1.2",
-    "minecraft-data": "^2.46.0",
-    "minecraft-protocol": "github:Heath123/node-minecraft-protocol#master",
+    "minecraft-data": "^2.69.1",
+    "minecraft-protocol": "^1.17.0",
     "net-browserify": "^0.2.4",
     "noa-engine": "github:andyhall/noa#develop",
-    "prismarine-chunk": "^1.14.0",
-    "protodef": "github:ProtoDef-io/node-protodef#master",
-    "webpack": "^4.43.0",
+    "prismarine-chunk": "^1.20.3",
+    "protodef": "^1.8.2",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.11",
-    "ws": "^7.2.5"
+    "ws": "^7.3.1"
   },
   "devDependencies": {
     "@babylonjs/core": "^4.1.0"
   },
   "scripts": {
-    "build": "npx webpack",
-    "start": "npx webpack --watch & node server/server.js"
+    "build": "webpack",
+    "start": "webpack --watch & node server/server.js"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 var express = require("express");
 var netApi = require("net-browserify");
 var bodyParser = require("body-parser");
-var request = require("request");
+const axios = require('axios');
 
 // Create our app
 var app = express();
@@ -30,7 +30,7 @@ app.use(bodyParser.json({ limit: "100kb" }));
 app.all("*", function(req, res, next) {
   // Set CORS headers: allow all origins, methods, and headers: you may want to lock this down in a production environment
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, PUT, PATCH, POST, DELETE");
+  res.header("Access-Control-Allow-Methods", "GET");
   res.header(
     "Access-Control-Allow-Headers",
     req.header("access-control-request-headers")
@@ -42,7 +42,7 @@ app.all("*", function(req, res, next) {
   } else {
     var targetURL = req.header("Target-URL");
     if (!targetURL) {
-      res.send(404, { error: "404 Not Found" });
+      res.status(404,).send({ error: "404 Not Found" });
       return;
     }
     newHeaders = req.headers;
@@ -50,7 +50,7 @@ app.all("*", function(req, res, next) {
       .replace("https://", "")
       .replace("http://", "")
       .split("/")[0];
-    request(
+    axios(
       {
         url: targetURL + req.url,
         method: req.method,
