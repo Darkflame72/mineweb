@@ -8,10 +8,10 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    // new webpack.IgnorePlugin(/^dns$/),
     new webpack.IgnorePlugin(/^child_process$/)
   ],
   resolve: {
+    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
     alias: {
       "minecraft-protocol": path.resolve(
         __dirname,
@@ -31,5 +31,14 @@ module.exports = {
         }
       }
     }
+  },
+  module: {
+    rules: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+      { test: /\.tsx?$/, loader: "ts-loader" },
+
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      { test: /\.js$/, loader: "source-map-loader" }
+    ]
   }
 };
