@@ -37,8 +37,6 @@ export function bindInputs(mineweb) {
   inputs.bind("slot9", "9");
 }
 
-////////////////////////////////////////////////////////////////////////
-
 export function setEventInputs(mineweb) {
   var noa = mineweb._noa;
   // addChatEvents();

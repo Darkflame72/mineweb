@@ -17,7 +17,7 @@ module.exports = {
         __dirname,
         "node_modules/minecraft-protocol/src/index.js"
       ), // Hack to allow creating the client in a browser
-      dns: path.resolve(__dirname, "dns.js"), // Hack to allow creating the client in a browser
+      dns: path.resolve(__dirname.concat("/scripts/"), "dns.js"), // Hack to allow creating the client in a browser
       net: "net-browserify"
     }
   },

@@ -1,5 +1,6 @@
 // Client stuff imports (For example we can import prismarine-inventory later)
 const mc = require("minecraft-protocol");
+
 // Noa stuff imports
 import Engine from "noa-engine";
 import { registerTextures } from "./textures.js"; // TEMP

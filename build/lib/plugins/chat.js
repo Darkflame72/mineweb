@@ -20,6 +20,7 @@ const styles = {
   underlined: "text-decoration:underline",
   italic: "font-style:italic"
 };
+
 const dictionary = {
   'chat.stream.emote': '(%s) * %s %s',
   'chat.stream.text': '(%s) <%s> %s',

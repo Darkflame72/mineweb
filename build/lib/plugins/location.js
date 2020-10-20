@@ -11,6 +11,7 @@ export function updatePosition(mineweb, x, y, z) {
   });
   // TODO: proper onGround
 }
+
 export function init(mineweb) {
   mineweb._client.on("position", function(packet) {
     console.log("Server teleported client to", packet);
