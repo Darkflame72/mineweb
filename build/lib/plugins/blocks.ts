@@ -1,6 +1,8 @@
+import { Mineweb } from "../mineweb";
+
 const Chunk = require("prismarine-chunk")("1.12.2");
 window.chunksToLoad = {};
-export function init(mineweb) {
+export function init(mineweb: Mineweb) {
     mineweb._client.on("multi_block_change", function (packet) {
         console.log("Multi block change packet! ", packet);
         for (var record of packet.records) {

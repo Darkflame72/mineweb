@@ -25,18 +25,18 @@ const styles = {
 const dictionary = {
     'chat.stream.emote': '(%s) * %s %s',
     'chat.stream.text': '(%s) <%s> %s',
-    // 'chat.type.achievement': '%s has just earned the achievement %s', // 1.8? Not tested
-    // 'chat.type.advancement.task': '%s has just earned the advancement %s',
-    // 'chat.type.advancement.goal': '%s has just reached the goal %s',
-    // 'chat.type.advancement.challenge': '%s did a challenge lolol %s',
+    'chat.type.achievement': '%s has just earned the achievement %s',
+    'chat.type.advancement.task': '%s has just earned the advancement %s',
+    'chat.type.advancement.goal': '%s has just reached the goal %s',
+    'chat.type.advancement.challenge': '%s did a challenge lolol %s',
     'chat.type.admin': '[%s: %s]',
     'chat.type.announcement': '[%s] %s',
     'chat.type.emote': '* %s %s',
     'chat.type.text': '<%s> %s'
 };
 export function init(mineweb: Mineweb) {
-    const chat = document.querySelector('#chat');
-    const chatInput = document.querySelector('#chatinput');
+    const chat: HTMLElement = document.querySelector('#chat');
+    const chatInput: HTMLInputElement = document.querySelector('#chatinput');
     const chatHistory = [];
     let chatHistoryPos = 0;
     // Show chat
@@ -80,7 +80,7 @@ export function init(mineweb: Mineweb) {
     };
     // Enable inputs back when focused
     document.addEventListener("pointerlockchange", function (event) {
-        const canvas = document.getElementById("noa-canvas");
+        const canvas = <HTMLCanvasElement> document.getElementById("noa-canvas");
         if (document.pointerLockElement === canvas ||
             document.mozPointerLockElement === canvas) {
             // Someone focused the game back so we hide chat.
@@ -108,7 +108,7 @@ export function init(mineweb: Mineweb) {
         // Enable controls
         mineweb._noa.inputs.disabled = false;
         // Focus noa again
-        const canvas = document.getElementById("noa-canvas");
+        const canvas = <HTMLCanvasElement> document.getElementById("noa-canvas");
         canvas.requestPointerLock =
             canvas.requestPointerLock || canvas.mozRequestPointerLock;
         canvas.requestPointerLock();

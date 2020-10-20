@@ -15,8 +15,9 @@ console.log("Starting with username: " + username);
 mineweb.start(username);
 // Hack to make esc work
 document.addEventListener("pointerlockchange", function (event) {
-    const canvas = document.getElementById("noa-canvas");
-    if (document.pointerLockElement === canvas) {
+    const canvas = <HTMLCanvasElement> document.getElementById("noa-canvas");
+    if (document.pointerLockElement === canvas ||
+        document.mozPointerLockElement === canvas) {
         console.log("The pointer lock status is now locked");
     }
     else {
