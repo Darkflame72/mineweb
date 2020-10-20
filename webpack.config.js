@@ -3,15 +3,17 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./build/main.js",
+  entry: "./build/index.ts",
   output: {
-    filename: "bundle.js"
+    filename: "./dist/bundle.js"
   },
-  plugins: [
-    new webpack.IgnorePlugin(/^child_process$/)
-  ],
+
+  // Enable sourcemaps for debugging webpack's output.
+  devtool: "source-map",
+
   resolve: {
-    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
     alias: {
       "minecraft-protocol": path.resolve(
         __dirname,
@@ -21,6 +23,19 @@ module.exports = {
       net: "net-browserify"
     }
   },
+
+  module: {
+    rules: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+      { test: /\.tsx?$/, loader: "ts-loader" },
+
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      { test: /\.js$/, loader: "source-map-loader" }
+    ]
+  },
+  plugins: [
+    new webpack.IgnorePlugin(/^child_process$/)
+  ],
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -32,13 +47,4 @@ module.exports = {
       }
     }
   },
-  module: {
-    rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-      { test: /\.tsx?$/, loader: "ts-loader" },
-
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { test: /\.js$/, loader: "source-map-loader" }
-    ]
-  }
 };

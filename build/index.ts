@@ -1,12 +1,13 @@
 // Workaround for non-chromium browsers
 require("error-polyfill");
-import { Mineweb } from "./lib/mineweb.js";
+import { Mineweb } from "./lib/mineweb";
 console.log("Mineweb version dev-1");
 // Get minecraft server
 let host: string;
 while (host == "" || host == undefined)
     host = prompt("Host", "95.111.249.143:10000");
-const mineweb = new Mineweb(host.split(":")[0], host.split(":")[1]);
+let port: number = +host.split(":")[1]
+const mineweb = new Mineweb(host.split(":")[0], port);
 // Get username
 let username: string;
 while (username == "" || username == undefined)

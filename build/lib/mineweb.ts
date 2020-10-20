@@ -1,11 +1,11 @@
 // Client stuff imports (For example we can import prismarine-inventory later)
-import mc = require("minecraft-protocol");
+import * as mc from "minecraft-protocol";
 // Noa stuff imports
 import Engine from "noa-engine";
-import { registerTextures } from "./textures.js"; // TEMP
+import { registerTextures } from "./textures"; // TEMP
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
-import { bindInputs } from "./inputs.js";
-import { setEventInputs } from "./inputs.js";
+import { bindInputs } from "./inputs";
+import { setEventInputs } from "./inputs";
 import { RenderingOptions } from "noa-engine/types/lib/rendering";
 var Vec3 = require("vec3").Vec3;
 export class Mineweb {
@@ -40,12 +40,12 @@ export class Mineweb {
         this._clientOpts = {
             host: host,
             port: port,
-            version: "1.12.2"
+            version: "1.12.2",
         };
         this.plugins = {
-            blocks: require("./plugins/blocks.js"),
-            location: require("./plugins/location.js"),
-            chat: require('./plugins/chat.js')
+            blocks: require("./plugins/blocks"),
+            location: require("./plugins/location"),
+            chat: require('./plugins/chat')
         };
         this._client;
         this._noa;
