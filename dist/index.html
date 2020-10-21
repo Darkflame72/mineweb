@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mineweb</title>
+    <link
+      rel="icon"
+      href="https://cdn.discordapp.com/attachments/620134540903710733/704341035391909968/menu-buy.png"
+    />
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Mineweb is a Minecraft client powered by noa and node-minecraft-protocol"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="loading" class="separator" style="clear: both; text-align: center">
+      <p>
+        Connecting to the server... <br /><br />
+        To open the game, you need to choose a nickname. if the nickname
+        selection screen is not displayed, press F5. <br />
+        Having problems? Go to the
+        <a href="https://mineweb.statuspage.io/" target="_blank"
+          >Service Status</a
+        >
+        Don't forget to join our
+        <a href="https://discord.gg/zSxsc9F" target="_blank">Discord Server</a>
+      </p>
+      <div id="reticle">+</div>
+      <noscript
+        >Sadly.... You need javascript... And you don't seem to have that
+        enabled :(</noscript
+      >
+      <script type="text/javascript" src="dist/babylon.js"></script>
+      <script type="text/javascript" src="dist/bundle.js"></script>
+      <center>
+        <div id="beta">
+          <span style="color: white">Mineweb snapshot 20w21b</span>
+          <span style="color: white"
+            >|Version number:59|Minecraft_version: 1.12.2|Version
+            date:29/04/2020 03:50pm(GMT+03:00)|node:v10.15.3</span
+          >
+          <br />
+        </div>
+      </center>
+      <ul id="chat">
+        <li>
+          <span style="color: white">
+            Thanks for using Mineweb Dev! In here you can use the chat!
+            <br />You can write a message by pressing the T key! Issues?
+            <a href="https://mineweb.statuspage.io/" target="_blank"
+              >Status page</a
+            >
+            or
+            <a href="https://discord.gg/zSxsc9F" target="_blank"
+              >our Discord.</a
+            >
+          </span>
+        </li>
+      </ul>
+      <input id="chatinput" type="text" value="" />
+    </div>
+  </body>
+</html>

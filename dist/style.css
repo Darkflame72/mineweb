@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "MinecraftiaRegular";
+  src: url("/assets/fonts/minecraftia/71962a7e3d4a70435c030466a12f1d63/bf3f245b7cd53caea0cb07d265a64adc/MinecraftiaRegular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: white;
+  margin: 0px;
+  overflow: hidden;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#reticle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin: -10px 0 0 -10px;
+  z-index: 99;
+  color: white;
+  text-shadow: 1px 1px 0px black;
+  text-align: center;
+}
+#chat::-webkit-scrollbar {
+  display: none;
+}
+#chat {
+  z-index: 9999;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ms-overflow-style: none;
+  user-select: none;
+  position: fixed;
+  /* width: 35%; */
+  width: 640px;
+  height: 40%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 42px;
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding: 0 8px;
+  display: none;
+  font-family: "MinecraftiaRegular";
+  font-style: normal;
+  word-spacing: -0.21px; /* Makes it look right */
+  font-size: 16px;
+}
+#chatinput {
+  z-index: 9999;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: fixed;
+  /* width: 35%; */
+  width: 640px;
+  height: 2%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* opacity: 0.9; */
+  bottom: 5px;
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-family: "MinecraftiaRegular";
+  font-style: normal;
+  display: none;
+  padding: 7px 8px 8px 8px;
+  border: none;
+  outline: none;
+  color: white;
+}
+#beta {
+  z-index: 9999;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+
+  font-size: x-medium;
+}
